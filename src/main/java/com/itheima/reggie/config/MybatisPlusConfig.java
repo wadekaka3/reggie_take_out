@@ -4,11 +4,6 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-/**
- * @author Brianxq
- * @version 1.0
- */
-
 
 /**
  * 配置MP的分页插件

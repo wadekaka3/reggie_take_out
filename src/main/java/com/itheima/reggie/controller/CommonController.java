@@ -1,9 +1,5 @@
 package com.itheima.reggie.controller;
 
-/**
- * @author Brian
- * @version 1.0
- */
 import com.itheima.reggie.common.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +10,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -24,8 +21,10 @@ import java.util.UUID;
 @RequestMapping("/common")
 @Slf4j
 public class CommonController {
+
     @Value("${reggie.path}")
     private String basePath;
+
     /**
      * 文件上传
      * @param file
@@ -67,6 +66,7 @@ public class CommonController {
      */
     @GetMapping("/download")
     public void download(String name, HttpServletResponse response){
+
         try {
             //输入流，通过输入流读取文件内容
             FileInputStream fileInputStream = new FileInputStream(new File(basePath + name));
@@ -89,7 +89,6 @@ public class CommonController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
-
-
 }
